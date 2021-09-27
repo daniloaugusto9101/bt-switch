@@ -1,0 +1,46 @@
+:root{
+    --bt-largura: 60px;
+    --bg-color-off: #dddddd;
+    --bg-color-on: #8ce196;
+}
+
+.switch3{
+    visibility: hidden;
+}
+
+.label3{
+    display: block;
+    position: relative;
+    width: var(--bt-largura);
+    height: calc(var(--bt-largura)/2);
+    background: var(--bg-color-off);
+    border-radius: var(--bt-largura);
+    cursor: pointer;
+}
+
+
+.label3::before, .label3::after{
+    content: '';
+    position: absolute;
+    height: calc(var(--bt-largura)/2);
+    border-radius: calc(var(--bt-largura)/2);
+    transition: all 0.4s;
+}
+
+.label3::before{
+    width: var(--bt-largura);
+}
+
+.label3::after{
+    background: white;
+    width: calc(var(--bt-largura)/2); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch3:checked + .label3::before{
+    background: var(--bg-color-on);
+}
+
+.switch3:checked + .label3::after{
+    transform: translateX(calc(var(--bt-largura)/2));
+}
